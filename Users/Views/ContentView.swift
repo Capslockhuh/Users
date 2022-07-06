@@ -14,7 +14,11 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(users) { user in
-                    Text(user.name)
+                    NavigationLink {
+                        DetailView(user: user)
+                    } label: {
+                        Text(user.name)
+                    }
                 }
             }
             .navigationTitle("Users")
